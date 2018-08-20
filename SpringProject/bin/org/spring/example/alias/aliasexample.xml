@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="triangle" class="org.spring.example.alias.Triangle" name="triangle-one">
+		<property name="pointA" ref="point1">
+			<!-- <idref="point1" /> -->
+		</property>
+		
+		<property name="pointB">
+			<bean class="org.spring.example.alias.Point">
+				<property name="x" value="0"></property>
+				<property name="y" value="-10"></property>
+			</bean>
+		</property>
+		
+		<property name="pointC">
+			<bean class="org.spring.example.alias.Point">
+				<property name="x" value="10"></property>
+				<property name="y" value="0"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="point1" class="org.spring.example.alias.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+	
+	<alias name="triangle" alias="triangle-alias"></alias>
+	
+	
+	
+</beans>
